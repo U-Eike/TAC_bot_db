@@ -96,7 +96,7 @@ def timeDif_hms(time):
     return str(tdelta)
 
 #global vars
-prefix='o?'
+prefix='o.'
 bot = commands.Bot(command_prefix=prefix)
 [units,drops,gears,jobs]=loadFiles(['units.json','drops.json','gear.json','jobs.json'])
 
@@ -447,5 +447,5 @@ async def debug(ctx):
 
 
 BOT_TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
-BOT_TOKEN="NDQ0NDM3OTMxMTM5MjY4NjE4.DfhvCA.zhTQHVabPJmgLXeDFgrBjDBffCQ"
+BOT_TOKEN="NDQ0NDM3OTMxMTM5MjY4NjE4.DfstwQ.s86_sGm1c_0E5uNuHCTC6V5j_uU"
 bot.run(BOT_TOKEN)
