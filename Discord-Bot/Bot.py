@@ -10,7 +10,7 @@ import discord
 from datetime import datetime
 from datetime import timedelta
 from discord.ext import commands
-from TAC_API import *
+from TAC_API import *`
 
 
 # Constants
@@ -358,17 +358,6 @@ async def collabs(ctx):
 
     await ctx.send(embed=embed)
 
-@bot.command()
-async def guides(ctx):
-    embed = discord.Embed(title="Guides", description="Resources For Alchemist Code Players Of All Skill Levels", color=0xeee657)
-
-    embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/412852079992897548.png")
-    embed.add_field(name="Game/Viyr's Tierlist", value="https://docs.google.com/spreadsheets/d/1DWeFk0wiPaDKAYEcmf_9LnMFYy1nBy2lPTNAX52LkPU/edit#gid=1081890459", inline=False)
-    embed.add_field(name="Reddit For The Alchemists Code", value="https://www.reddit.com/r/AlchemistCodeGL/", inline=False)
-    embed.add_field(name="Reroll Guide", value="Placeholder Link", inline=False)
-    embed.add_field(name="Alchemists Code Database", value="http://alchemistcodedb.com", inline=False)
-
-    await ctx.send(embed=embed) 
         
 @bot.command()
 async def guides(ctx):
