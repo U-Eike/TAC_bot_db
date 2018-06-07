@@ -10,7 +10,7 @@ import discord
 from datetime import datetime
 from datetime import timedelta
 from discord.ext import commands
-from TAC_API import *`
+from TAC_API import *
 
 
 # Constants
