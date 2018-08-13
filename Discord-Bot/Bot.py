@@ -96,7 +96,7 @@ def timeDif_hms(time):
     return str(tdelta)
 
 #global vars
-prefix='o?'
+prefix='o.'
 bot = commands.Bot(command_prefix=prefix)
 [units,drops,gears,jobs]=loadFiles(['units.json','drops.json','gear.json','jobs.json'])
 
@@ -336,7 +336,7 @@ async def tierlist(ctx):
         footer= {"text": "Tierlist by Game, Visualisation by Ｅｉｋｅ/アイケ"},
         )
     #icon
-    #embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/453970242914353167/453978923844239362/Chibi_Lucian.png")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/453970242914353167/453978923844239362/Chibi_Lucian.png")
     #image
     embed.set_image(url="https://i.imgur.com/crlzqAL.jpg")
     
@@ -358,14 +358,29 @@ async def collabs(ctx):
 
     await ctx.send(embed=embed)
 
+        
+@bot.command()
+async def guides(ctx):
+    embed = discord.Embed(title="Guides", description="Resources For Alchemist Code Players Of All Skill Levels", color=0xeee657)
+
+    embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/412852079992897548.png")
+    embed.add_field(name="Game/Viyr's Tierlist", value="https://docs.google.com/spreadsheets/d/1DWeFk0wiPaDKAYEcmf_9LnMFYy1nBy2lPTNAX52LkPU/edit#gid=1081890459", inline=False)
+    embed.add_field(name="Reddit For The Alchemists Code", value="https://www.reddit.com/r/AlchemistCodeGL/", inline=False)
+    embed.add_field(name="Reroll Guide", value="Placeholder Link", inline=False)
+    embed.add_field(name="Alchemists Code Database", value="http://alchemistcodedb.com", inline=False)
+    embed.add_field(name="Item Farming Guide", value="https://thealchemistcode.gamepedia.com/Best_Places_to_Farm", inline=False)
+    embed.add_field(name="F.A.Q", value="https://docs.google.com/document/d/1JlKVvhAkqJgzDI9P5wfoLOFgDUIkf6Qz9t36GYIIOe4/edit?usp=sharing", inline=False)
+
+    await ctx.send(embed=embed) 
+    
 @bot.command()
 async def info(ctx):
-    embed = discord.Embed(title="Ouroboros 2", description="TAC bot powered by data-mining :rigaltsmirk:", color=0xeee657)
+    embed = discord.Embed(title="Ouroboros α", description="TAC bot powered by data-mining ~~Also Totally Not Ouroboros~~", color=0xeee657)
 
     # Shows the number of servers the bot is member of.
     embed.add_field(name="Server count", value=f"{len(bot.guilds)}")
     # give users a link to invite thsi bot to their server
-    embed.add_field(name="Invite", value="[Invite link](<https://discordapp.com/oauth2/authorize?client_id=437868948130758668&permissions=388160&scope=bot>)")
+    embed.add_field(name="Invite", value="[Invite link](<https://discordapp.com/api/oauth2/authorize?client_id=444437931139268618&permissions=0&scope=bot>)")
     # credits
     embed.add_field(name="Credits", value="missing job and j+/je naming: <@213962205895458818> \n"+
         "global data: <@178153963248549889> \n"+
@@ -380,12 +395,14 @@ bot.remove_command('help')
 async def help(ctx):
     embed = discord.Embed(title="Ouroborus Bot", description="**Commands:**", color=0xeee657)
 
-    embed.add_field(name="o?unit *name*", value="important informations about the unit", inline=False)
-    embed.add_field(name="o?lore *name*", value="lore of the unit", inline=False)
-    embed.add_field(name="o?art *name*", value="artworks of the unit", inline=False)
-    embed.add_field(name="o?farm *name*", value="maps on which the item can be acquired", inline=False)
-    embed.add_field(name="o?collabs *name*", value="collab shortcuts for unit names (after the unit name)", inline=False)
-    embed.add_field(name="o?info", value="some informations about the bot", inline=False)
+    embed.add_field(name="o.unit *name*", value="important information about the unit requested", inline=False)
+    embed.add_field(name="o.lore *name*", value="lore of the unit requested", inline=False)
+    embed.add_field(name="o.art *name*", value="artwork of the unit requested", inline=False)
+    embed.add_field(name="o.farm *name*", value="maps on which the requested item can be acquired", inline=False)
+    embed.add_field(name="o.collabs *name*", value="collab shortcuts for unit names (after the unit name)", inline=False)
+    embed.add_field(name="o.job *name*", value="info on the job requested", inline=False)
+    embed.add_field(name="o.skill", value="skill info about the job requested", inline=False)
+    embed.add_field(name="o.info", value="some informations about the bot", inline=False)
 
     await ctx.send(embed=embed)
 
@@ -430,5 +447,5 @@ async def debug(ctx):
 
 
 BOT_TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
-BOT_TOKEN="NDM3ODY4OTQ4MTMwNzU4NjY4.DdYvnw.UTWQMqytfyiu6YXzkY4iIw4CqJY"
+BOT_TOKEN="NDQ0NDM3OTMxMTM5MjY4NjE4.DfstwQ.s86_sGm1c_0E5uNuHCTC6V5j_uU"
 bot.run(BOT_TOKEN)
